@@ -1,37 +1,58 @@
 
+const container = document.querySelector('.board')
+
+
 createBoard()
 
 function createBoard() {
-
-    const loopTime = 160;
-
+    const loopTime = 256;
     for (let i = 0; i < loopTime; i++) {
-        createSquare()
-        console.log(`Iteration is #${i}`);
+        createSquare(i)
     }
-
-
-
-
 }
 
-function createSquare() {
-    // // 1. element creation 
+// Create square
+function createSquare(i) {
+    var num = i
+    // 1. element creation 
     var squareChild = document.createElement('div');
-    squareChild.classList.add('squareblock');
-    squareChild.style.height = '43px';
-    squareChild.style.width = '43px';
-    squareChild.style.backgroundColor = 'white';
-    squareChild.style.border = '1px solid black';
-    squareChild.style.flex = "auto"
+    squareChild.classList.add('squareBlock');
+    squareChild.id = num
+    // 2. parent node
+    container.appendChild(squareChild)
+}
+
+const list = container.querySelectorAll('.squareBlock')
 
 
+// Check if we clicked the square
+container.addEventListener("click", function (e) {
+    if (e.target.classList.contains('squareBlock')) {
+        var numId = e.target.id
+        console.log(numId)
+        changeSquare(numId)
+    }
+})
+
+// On mouseover we paint
+container.addEventListener("mouseover", function (e) {
+    console.log('dragging')
+    if (e.target.classList.contains('squareBlock')) {
+        console.log('dragging')
+        var numId = e.target.id
+        console.log(numId)
+        changeSquare(numId)
+    }
+})
 
 
-    // // 2. parent node
-    const parentNode = document.querySelector('.board')
-    parentNode.appendChild(squareChild)
+function changeSquare(numId) {
+    var newSquare = document.getElementById(numId)
+    newSquare.style.backgroundColor = "black"
 }
 
 
-
+// const source = document.getElementById("delete id");
+// source.addEventListener("mouseover", (event) => {
+//   console.log("dragging");
+// });

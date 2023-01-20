@@ -32,8 +32,8 @@ body{
     background-color: #C62828;
     margin: 20px 20px 0;
     border-radius: 15px;
-    width: 800px;
-    height: 500px;
+    width: 1200px;
+    height: 800px;
     justify-content: center;
 
 }
@@ -42,8 +42,8 @@ body{
     /* background-color: #FAFAFA; */
     display: flex;
     flex-wrap: wrap;
-    width: 700px;
-    height: 400px;
+    width: 1000px;
+    height: 600px;
     /* border-radius: 10px; */
     align-self: center;
 }
@@ -56,6 +56,16 @@ body{
     justify-content: center;
     align-items: center;
 
+}
+
+.squareBlock{
+
+    height: 43px;
+    width: 43px;
+    background-color: white;
+    border: 1px solid #424242;
+    flex: auto;
+    
 }
 
 /* Footer */
